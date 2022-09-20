@@ -11,21 +11,21 @@ By year:
 This course relies on the nba_api package which you can find here: https://github.com/swar/nba_api
 
 ## [06-Data Munging]()
-* pybaseball 2021 `batting_stats`
-* pybaseball 2021 `standings`
+* nba_api 2021 `leagueleaders` season long player totals
+* nba_api 2021 `teamgamelogs` individual game team stats
 
-## [07-Data Visualizations]()
-* pybaseball 2021 `batting_stats_range`
-* pybaseball 2021 `statcast`
+## [07-Data Visualization]()
+* nba_api 2021 `PlayerGameLogs`individual game stats for individual players
 
-## [08-Analyzing MLB Salary Data]()
+## [08-Shot Chart]()
+* nba_api 2021 `ShotChartDetail` individual shots and locations
 
+## [09-Linear Regression with Basketball]()
+* nba_api 2000 - 2021 `LeagueLeaders` 20 years of season level data
 
-## [09-Linear Regression with Baseball]()
-* pybaseball 2010 - 2019 `batting_stats`
-
-## [10-Classifying Pitch Type Using Machine Learning]()
-* pybaseball 2021 `statcast`
+## [10-Classification Algorithms]()
+* CSV - [MVPs]() 
+* nba_api 1980-2017`LeagueLeaders` 40 years of season level data
 
 ## [11-Unsupervised Machine Learning]()
 * CSV - [2021 Fantasy Pros Rankings]()
