@@ -10,23 +10,23 @@ By year:
 
 This course relies on the nba_api package which you can find here: https://github.com/swar/nba_api
 
-## [06-Data Munging]()
+## 06-Data Munging
 * nba_api 2021 `leagueleaders` season long player totals
 * nba_api 2021 `teamgamelogs` individual game team stats
 
-## [07-Data Visualization]()
+## 07-Data Visualization
 * nba_api 2021 `PlayerGameLogs`individual game stats for individual players
 
-## [08-Shot Chart]()
+## 08-Shot Chart
 * nba_api 2021 `ShotChartDetail` individual shots and locations
 
-## [09-Linear Regression with Basketball]()
+## 09-Linear Regression with Basketball
 * nba_api 2000 - 2021 `LeagueLeaders` 20 years of season level data
 
-## [10-Classification Algorithms]()
+## 10-Classification Algorithms
 * CSV - [MVPs]() 
 * nba_api 1980-2017`LeagueLeaders` 40 years of season level data
 
-## [11-Unsupervised Machine Learning]()
+## 11-Unsupervised Machine Learning
 * CSV - [2021 Fantasy Pros Rankings]()
 
