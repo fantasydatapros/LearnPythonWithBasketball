@@ -6,7 +6,7 @@ To use nba_api first install and import it.
 pip install nba_api
 import nba_api
 ```
-In this section we use 2021 [shot chart](https://github.com/swar/nba_api/tree/master/nba_api) data, which is data on every shot every player took in 2021.
+In this section we use 2021 [shot chart](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/shotchartdetail.md) data, which is data on every shot every player took in 2021.
 ```python
 from nba_api.stats.endpoints import shotchartdetail
 
