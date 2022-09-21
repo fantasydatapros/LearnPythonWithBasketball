@@ -6,7 +6,7 @@ To use nba_api first install and import it.
 pip install nba_api
 import nba_api
 ```
-In this section we use 20 years of [season totals](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/leagueleaders.md) from 2000 - 2021  data, which is data on every shot every player took in 2021.
+In this section we use 20 years of [season totals](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/leagueleaders.md) from 2000 - 2021  data, which is season long totals for each of those years.
 ```python
 from nba_api.stats import endpoints
 
