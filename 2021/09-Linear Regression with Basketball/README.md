@@ -1,14 +1,27 @@
-This section uses [pybaseball](https://github.com/jldbc/pybaseball#readme). I will give a short explaination of how to use each method. Linked below is pybaseball's documentation.
+This section uses [nba_api](https://github.com/swar/nba_api). I will give a short explaination of how to use each method. Linked is nba_api's documentation.
 
-To use pybaseball first install and import it.
+To use nba_api first install and import it.
 
 ```python
-pip install pybaseball
-import pybaseball as pyb
+pip install nba_api
+import nba_api
 ```
-We use 2010 - 2019 [batting_stats](https://github.com/jldbc/pybaseball/blob/master/docs/batting_stats.md). In the section we break this up to extract 2019 data as its own DataFrame.
+In this section we use 20 years of [season totals](https://github.com/swar/nba_api/tree/master/nba_api) from 2000 - 2021  data, which is data on every shot every player took in 2021.
 ```python
-pyb.batting_stats(2010, 2019)
+from nba_api.stats import endpoints
+
+# initialize seasons we want to pull for
+seasons = np.arange(2000,2021)
+seasons2 = np.arange(0,22)
+
+# loop through the seasons and add each year of NBA season totals to our dataframe. Start by initializing the first season.
+data = endpoints.leagueleaders.LeagueLeaders(season='1999-00').league_leaders.get_data_frame()
+data['season_start'] = 1999
+
+for i, v in enumerate(seasons):
+    temp = endpoints.leagueleaders.LeagueLeaders(season='{0}-{1}'.format(v,str(seasons2[i]+1).zfill(2))).league_leaders.get_data_frame()
+    temp['season_start'] = v
+    data = data.append(temp)
 ```
-- start_dt: first argument is the start year (int)
-- end_dt: second argument is the end year (int) (you can leave it blank and it will give you data up until the present day)
+- season: the year you want to pull data for (string: 'YYYY-YY')
+
