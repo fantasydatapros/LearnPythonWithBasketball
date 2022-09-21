@@ -1,21 +1,20 @@
-This section uses [pybaseball](https://github.com/jldbc/pybaseball#readme). I will give a short explaination of how to use each method. Linked below is pybaseball's documentation.
+This section uses [nba_api](https://github.com/swar/nba_api). I will give a short explaination of how to use each method. Linked is nba_api's documentation.
 
-To use pybaseball first install and import it.
+To use nba_api first install and import it.
 
 ```python
-pip install pybaseball
-import pybaseball as pyb
+pip install nba_api
+import nba_api
 ```
-In this section we use 2021 [batting_stats_range](https://github.com/jldbc/pybaseball/blob/master/docs/batting_stats_range.md), which is batting stats over a specified time range.
+In this section we use 2021 [player game logs](https://github.com/swar/nba_api/tree/master/nba_api), which is individual game stats for individual players. Again, don't worry too much about the specifics of the code since things like json is outside the scope of the course, but if interested you can follow up for more information on the nba_api github.
 ```python
-pyb.batting_stats_range('2021-05-01','2021-10-03')
-```
-- start_dt: first argument is the start date formatted `YYYY-MM-DD` (str)
-- end_dt: second argument is the end date formatted `YYYY-MM-DD` (you can leave it blank and it will give you data up until the present day) (str)
+from nba_api.stats.endpoints import playergamelogs
 
-We also use 2021 [statcast](https://github.com/jldbc/pybaseball/blob/master/docs/statcast.md) data for its individual pitch statistics.
-```python
-pyb.statcast(start_dt='2021-09-22', end_dt='2021-09-23')
+response = playergamelogs.PlayerGameLogs(season_nullable='2021-22')
+content = json.loads(response.get_json())
+results = content['resultSets'][0]
+headers = results['headers']
+rows = results['rowSet']
+df = pd.DataFrame(rows,columns= headers)
 ```
-- start_dt: first argument is the start date formatted `YYYY-MM-DD` (str)
-- end_dt: second argument is the end date formatted `YYYY-MM-DD` (you can leave it blank and it will give you data up until the present day) (str)
+- season_nullable: the year you want to pull data for (string: 'YYYY-YY')
