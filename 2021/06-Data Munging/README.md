@@ -13,7 +13,7 @@ data = endpoints.leagueleaders.LeagueLeaders(season = '2021-22').league_leaders.
 ```
 - season: the year you want to pull data for (string: 'YYYY-YY')
 
-We also use 2021 [Team Game Log](https://github.com/swar/nba_api/tree/master/nba_api) data which is used to aquire team records. Some of nba_api needs some extra code to pull everything properly, don't get too bogged down if youre confused by it. If you're interested you can read more on the team game log link.
+We also use 2021 [Team Game Log](https://github.com/swar/nba_api/blob/master/docs/nba_api/stats/endpoints/teamgamelogs.md) data which is used to aquire team records. Some of nba_api needs some extra code to pull everything properly, don't get too bogged down if youre confused by it. If you're interested you can read more on the team game log link.
 ```python
 import json
 response = endpoints.teamgamelogs.TeamGameLogs(season_nullable = '2021-22')
